@@ -1,5 +1,18 @@
-#starView {
-  border: 1px solid grey;
-  width: 50px;
-  height: 50px;
+.star {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 80px solid #f00; /* Default color, you can change this */
+  position: relative;
+  top: 15px;
+}
+
+#generateStarButton {
+  text-align: center;
+  align-items: center;
+}
+body {
+  background-color: cornsilk;
 }
