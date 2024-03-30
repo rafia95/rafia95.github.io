@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Colored Star</title>
+    <style>
+      /* Style for the star */
+      .star {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 80px solid #f00; /* Red */
+        position: relative;
+        top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="generateStarButton">Generate Random Star</button>
+    <div id="starContainer"></div>
+
+    <script>
+      // Function to generate a random color
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      // Function to generate a random star
+      function generateStar() {
+        var star = document.createElement("div");
+        star.classList.add("star");
+        star.style.borderBottomColor = getRandomColor(); // Set random color for the star
+        document.getElementById("starContainer").appendChild(star);
+      }
+
+      // Event listener for the button click
+      document.getElementById("generateStarButton").addEventListener("click", function () {
+        generateStar();
+      });
+    </script>
+  </body>
+</html>
